@@ -1,7 +1,34 @@
-// [data-layout="index"] {}
-// [data-page="index"] {}
+@import '~antd/dist/antd.min.css';
+@import './variables';
+
+@import './layouts/Main';
+@import './components/Sidebar';
+@import './components/Header';
+@import './components/Container';
+@import './components/Backdrop';
+@import './components/Tag';
+@import './components/Details';
+
+[data-page='index'] {
+    &.--search {
+        [data-component='Details'] {
+            display: none;
+        }
+        .__items {
+            display: flex;
+        }
+    }
+    &.--details {
+        [data-component='Details'] {
+            display: block;
+        }
+        .__items {
+            display: none;
+        }
+    }
+}
 
 body {
-    background: black;
+    background-color: $dark-background;
     color: white;
 }

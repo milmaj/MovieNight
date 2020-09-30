@@ -7,4 +7,8 @@ export default defineConfig({
     nodeModulesTransform: {
         type: 'none',
     },
+    antd: false,
+    dva: {
+        immer: true,
+    },
 });

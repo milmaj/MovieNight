@@ -1,0 +1,19 @@
+$size: $base * 16;
+
+[data-component='Sidebar'] {
+    width: $size;
+    display: flex;
+    flex-direction: column;
+    background: $dark-background;
+    .__item {
+        height: $size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $base * 3;
+        flex-direction: column;
+        &.--logo {
+            background: $overlay-on-dark;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+$height: $base * 8;
+$space: $height / 2;
+
+[data-component='Header'] {
+    height: $base * 16;
+    padding: $space;
+    .__search {
+        width: $base * 48;
+        // Ant Input
+        .ant-input {
+            background: $overlay-on-dark;
+            border: none;
+            height: $height;
+            border-radius: $space;
+            padding: $base * 2 $space;
+            color: $white;
+            font-size: 24px;
+            &-wrapper {
+                position: relative;
+            }
+            &-group-addon {
+                width: $height;
+                height: $height;
+                background: none;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 1;
+                .ant-btn {
+                    border: none;
+                    width: $height;
+                    height: $height;
+                    border-radius: $space;
+                    background: none;
+                }
+            }
+        }
+    }
+}

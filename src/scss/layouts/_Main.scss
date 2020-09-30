@@ -1,0 +1,17 @@
+[data-layout='Main'] {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    .__content {
+        flex: 1;
+        box-shadow: inset $base * 3 0px $base * 10 0px rgba(0, 0, 0, 0.6);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        .__children {
+            flex: auto;
+        }
+    }
+}
