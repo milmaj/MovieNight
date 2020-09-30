@@ -1,34 +1,46 @@
+import { GetMoviesResult } from '@/shared/ApiResult';
 import { Movie } from '@/shared/Movie';
+import apiService from '@/utils/apiService';
 import { Effect, ImmerReducer, Reducer, Subscription } from 'umi';
 
 export interface MovieModelState {
     movies: Array<Movie>;
-    selectedMovie?: number;
+    selectedMovie?: Movie;
 }
 export interface MovieModelType {
     namespace: 'movie';
     state: MovieModelState;
     effects: {
-        // query: Effect;
+        fetchPopularMovies: Effect;
+        query: Effect;
     };
     reducers: {
-        save: ImmerReducer<MovieModelState>;
+        saveMovies: ImmerReducer<MovieModelState>;
         saveSelectedMovie: ImmerReducer<MovieModelState>;
     };
     subscriptions: {
         // setup: Subscription
     };
 }
+
 const MovieModel: MovieModelType = {
     namespace: 'movie',
     state: {
         movies: [],
     },
     effects: {
-        // *query({ payload }, { call, put }) {},
+        *fetchPopularMovies({ payload }, { call, put }) {
+            const result: GetMoviesResult = yield call(apiService.movie.popular);
+            yield put({ type: 'saveMovies', payload: result.results });
+        },
+        *query({ payload }, { call, put }) {
+            yield put({ type: 'saveMovies', payload: [] });
+            const result: GetMoviesResult = yield call(apiService.search.movie, payload);
+            yield put({ type: 'saveMovies', payload: result.results });
+        },
     },
     reducers: {
-        save(state, action) {
+        saveMovies(state, action) {
             state.movies = action.payload;
         },
         saveSelectedMovie(state, action) {

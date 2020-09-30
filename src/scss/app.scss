@@ -1,6 +1,10 @@
 @import '~antd/dist/antd.min.css';
 @import './variables';
 
+@mixin shadow {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
 @import './layouts/Main';
 @import './components/Sidebar';
 @import './components/Header';
@@ -8,27 +12,19 @@
 @import './components/Backdrop';
 @import './components/Tag';
 @import './components/Details';
+@import './components/VideoPlayer';
+@import './components/MovieCard';
 
-[data-page='index'] {
-    &.--search {
-        [data-component='Details'] {
-            display: none;
-        }
-        .__items {
-            display: flex;
-        }
-    }
-    &.--details {
-        [data-component='Details'] {
-            display: block;
-        }
-        .__items {
-            display: none;
-        }
-    }
+[data-page='/'] {
 }
 
 body {
     background-color: $dark-background;
     color: white;
+}
+
+.ant-modal-body {
+    > div {
+        display: flex;
+    }
 }

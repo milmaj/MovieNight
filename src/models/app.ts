@@ -1,4 +1,4 @@
-import { Effect, ImmerReducer, Reducer, Subscription } from 'umi';
+import { Effect, ImmerReducer } from 'umi';
 
 export interface AppModelState {
     searching: boolean;
@@ -21,7 +21,7 @@ export interface AppModelType {
 const AppModel: AppModelType = {
     namespace: 'app',
     state: {
-        searching: false,
+        searching: true,
     },
     effects: {
         *query({ payload }, { call, put }) {
