@@ -1,28 +1,29 @@
 @import '~antd/dist/antd.min.css';
+
+//
 @import './variables';
+@import './mixins';
 
-@mixin shadow {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
+// components
 @import './layouts/Main';
 @import './components/Sidebar';
 @import './components/Header';
 @import './components/Container';
 @import './components/Backdrop';
 @import './components/Tag';
-@import './components/Details';
 @import './components/VideoPlayer';
 @import './components/MovieCard';
+@import './components/MovieDetails';
 
-[data-page='/'] {
-}
+// [data-page='/'] {
+// }
 
 body {
     background-color: $dark-background;
     color: white;
 }
 
+// ant overriding
 .ant-modal-body {
     > div {
         display: flex;

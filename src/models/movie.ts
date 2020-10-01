@@ -1,7 +1,7 @@
 import { GetMoviesResult } from '@/shared/ApiResult';
 import { Movie } from '@/shared/Movie';
 import apiService from '@/utils/apiService';
-import { Effect, ImmerReducer, Reducer, Subscription } from 'umi';
+import { Effect, ImmerReducer } from 'umi';
 
 export interface MovieModelState {
     movies: Array<Movie>;

@@ -1,6 +1,7 @@
-import { AppModelState, AppModelType, MovieModelState } from 'umi';
+import { GenreModelState } from '@/models/genre';
+import { MovieModelState } from '@/models/movie';
 
 export type State = {
-    app: AppModelState;
     movie: MovieModelState;
+    genre: GenreModelState;
 };

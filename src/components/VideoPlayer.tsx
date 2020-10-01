@@ -9,6 +9,9 @@ interface Props {
     video: Video;
 }
 
+/**
+ * Support YouTube
+ */
 const VideoPlayer: React.FC<Props> = props => {
     const { video } = props;
     const [visible, setVisible] = useState<boolean>(false);
@@ -34,7 +37,7 @@ const VideoPlayer: React.FC<Props> = props => {
                 >
                     <YouTube
                         videoId={video.key}
-                        opts={{ width: '1000px', height: '800px', playerVars: { autoplay: 1 } }}
+                        opts={{ width: '1000px', height: '600px', playerVars: { autoplay: 1 } }}
                     />
                 </Modal>
             </div>

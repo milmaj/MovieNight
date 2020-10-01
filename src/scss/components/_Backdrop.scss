@@ -12,10 +12,10 @@
         content: '';
         background: linear-gradient(
             17deg,
-            rgba(0, 0, 0, 0.86) 0%,
-            rgba(0, 0, 0, 0.82) 11%,
-            rgba(0, 0, 0, 0.72) 50%,
-            rgba(255, 255, 255, 0.28895308123249297) 100%
+            rgba($black, 0.86) 0%,
+            rgba($black, 0.82) 11%,
+            rgba($black, 0.72) 50%,
+            rgba($white, 0.28) 100%
         );
     }
 }

@@ -1,5 +1,5 @@
-$height: $base * 8;
-$space: $height / 2;
+$size: $base * 8;
+$space: $size / 2;
 
 [data-component='Header'] {
     height: $base * 16;
@@ -10,7 +10,7 @@ $space: $height / 2;
         .ant-input {
             background: $overlay-on-dark;
             border: none;
-            height: $height;
+            height: $size;
             border-radius: $space;
             padding: $base * 2 $space;
             color: $white;
@@ -19,8 +19,8 @@ $space: $height / 2;
                 position: relative;
             }
             &-group-addon {
-                width: $height;
-                height: $height;
+                width: $size;
+                height: $size;
                 background: none;
                 position: absolute;
                 right: 0;
@@ -28,8 +28,8 @@ $space: $height / 2;
                 z-index: 1;
                 .ant-btn {
                     border: none;
-                    width: $height;
-                    height: $height;
+                    width: $size;
+                    height: $size;
                     border-radius: $space;
                     background: none;
                 }

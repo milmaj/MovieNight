@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
-import { Card, Col, Row } from 'antd';
+import { Col, Row } from 'antd';
 import { MovieModelState, useDispatch, useSelector, Link } from 'umi';
 import { State } from '@/models/connect';
 import MovieCard from '@/components/MovieCard';
+import { GenreModelState } from '@/models/genre';
 
 export default () => {
     const dispatch = useDispatch();
     const movie = useSelector<State, MovieModelState>(state => state.movie);
+    const genre = useSelector<State, GenreModelState>(state => state.genre);
 
     useEffect(() => {
         !movie.movies.length ? dispatch({ type: 'movie/fetchPopularMovies' }) : null;
+        !genre.genres.length ? dispatch({ type: 'genre/fetch' }) : null;
     }, []);
 
     return (

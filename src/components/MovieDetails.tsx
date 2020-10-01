@@ -1,18 +1,19 @@
 import React from 'react';
 import { Col, Row } from 'antd';
 import { Movie } from '@/shared/Movie';
-import { genres } from '@/example';
 import { HeartOutlined, FireOutlined } from '@ant-design/icons';
 import Tag from './Tag';
+import { Genre } from '@/shared/Genre';
 
 interface Props {
     movie: Movie;
+    allGenres: Genre[];
 }
 
-const Details: React.FC<Props> = props => {
-    const { movie } = props;
+const MovieDetails: React.FC<Props> = props => {
+    const { movie, allGenres } = props;
     return (
-        <div data-component="Details">
+        <div data-component="MovieDetails">
             <div className="__year">{new Date(movie.release_date).getFullYear()}</div>
             <h1 className="__title">{movie.title}</h1>
             <div className="__overview">{movie.overview}</div>
@@ -20,7 +21,7 @@ const Details: React.FC<Props> = props => {
                 <Row gutter={[16, 16]}>
                     {movie.genre_ids.map((i, index) => (
                         <Col key={index}>
-                            <Tag>{genres.find(g => g.id === i)?.name}</Tag>
+                            <Tag>{allGenres.find(g => g.id === i)?.name || i}</Tag>
                         </Col>
                     ))}
                 </Row>
@@ -43,4 +44,4 @@ const Details: React.FC<Props> = props => {
     );
 };
 
-export default Details;
+export default MovieDetails;

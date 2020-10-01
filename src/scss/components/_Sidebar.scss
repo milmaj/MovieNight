@@ -13,7 +13,7 @@ $size: $base * 16;
         padding: $base * 3;
         flex-direction: column;
         &.--logo {
-            background: $overlay-on-dark;
+            background: $red;
         }
     }
 }
