@@ -11,4 +11,6 @@ export default defineConfig({
     dva: {
         immer: true,
     },
+    publicPath: './',
+    base: '/movie-night',
 });

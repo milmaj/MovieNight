@@ -1,6 +1,6 @@
 # Movie Night
 
-![Details Page](https://github.com/milmaj/MovieNight/blob/master/src/assets/screenshot-2.png)
+[<img src="https://github.com/milmaj/MovieNight/blob/master/src/assets/screenshot-2.png">](https://milmaj.github.io/movie-night/)
 
 ## Features
 
