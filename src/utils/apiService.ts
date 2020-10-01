@@ -1,5 +1,5 @@
 import config from '@/config/config';
-import { GetMoviesResult, GetVideosResult } from '@/shared/ApiResult';
+import { GetGenresResult, GetMoviesResult, GetVideosResult } from '@/shared/ApiResult';
 import { request } from 'umi';
 
 export default {
@@ -18,6 +18,14 @@ export default {
         movie: (query: string) => {
             const url = config.apiUrl(`search/movie`) + `&query=${query}`;
             return request<GetVideosResult>(url);
+        },
+    },
+    genre: {
+        movie: {
+            list: () => {
+                const url = config.apiUrl(`genre/movie/list`);
+                return request<GetGenresResult>(url);
+            },
         },
     },
 };
